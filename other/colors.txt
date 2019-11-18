@@ -1,0 +1,4 @@
+414141 -- black
+Ccdfcb --lime green
+Ff6a5c --pink
+056571 --navy blue
