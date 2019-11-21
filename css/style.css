@@ -141,6 +141,7 @@ p{
 }
 .skill-proficiency-black{
   width:50%;
+  height:30px;
   padding-top:20px;
   padding-bottom:20px;
   float:right;
@@ -155,6 +156,7 @@ p{
 }
 .skill-proficiency-navy{
   width:55%;
+  height:30px;
   padding-top:20px;
   padding-bottom:20px;
   float:right;
@@ -167,8 +169,10 @@ p{
   background-color:#056571;
   overflow: hidden;
 }
+
 .white-oval{
   width:90%;
+  height:10px;
   margin-left: 5%;
   padding-top: 10px;
   padding-bottom:10px;

@@ -241,5 +241,22 @@
 
       </div>
     </div>
+    <script>
+    $(".proficiency-bar-navy").animate({width: "toggle"}, 0);
+    $(".proficiency-bar-black").animate({width: "toggle"}, 0);
+
+    $(document).ready(function() {
+      $(document).on('scroll', function(){
+        if($(document).scrollTop()>$('div.skills').offset().top-400){
+          $(".proficiency-bar-navy").animate({width: "show"}, 800);
+          $(".proficiency-bar-black").animate({width: "show"}, 800);
+        }
+        else{
+          $(".proficiency-bar-navy").animate({width: "hide"}, 800);
+          $(".proficiency-bar-black").animate({width: "hide"}, 800);
+        }
+      });
+      });
+    </script>
 </body>
 </html>
