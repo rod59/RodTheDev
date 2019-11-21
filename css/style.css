@@ -1,6 +1,7 @@
+
 body{
   margin: 20;
-  padding: 0;
+  padding: 0
 }
 h1, h2, h3{
   text-align: center;
@@ -9,7 +10,7 @@ h1, h2, h3{
   padding:0;
 }
 h1{
-  font-size: 60px;
+  font-size: 50px;
   font-weight:bolder;
 }
 h2{
@@ -28,30 +29,30 @@ p{
 .cube{
   width:55%;
   height:600px;
-  background-color: #Ff6a5c;
+  background-color: #d6e6f2;
 }
 .top-left-corner{
   border-left:white;
   border-top:white;
-  border-bottom: #056571;
-  border-right: #056571;
+  border-bottom: #b9d7ea;
+  border-right: #b9d7ea;
   border-style: solid;
   border-width:3em 3em;
   float:left;
 }
 .bottom-left-corner{
-  border-left:#056571;
-  border-top: #056571;
-  border-bottom: #414141;
-  border-right: #414141;
+  border-left:#b9d7ea;
+  border-top: #b9d7ea;
+  border-bottom: #769fcd;
+  border-right: #769fcd;
   border-style: solid;
   border-width:3em 3em;
   float:left;
 }
 
 .bottom-right-corner{
-  border-left:#414141;
-  border-top: #414141;
+  border-left:#769fcd;
+  border-top: #769fcd;
   border-bottom: white;
   border-right: white;
   border-style: solid;
@@ -59,7 +60,7 @@ p{
   float:right;
 }
 .left-bar{
-  background-color: #056571;
+  background-color: #b9d7ea;
   height:600px;
   width:6em;
 }
@@ -74,7 +75,7 @@ p{
 .bottom-bar{
   width:100%;
   height: 6em;
-  background-color: #414141;
+  background-color: #769fcd;
 }
 /*end of cube*/
 .right-of-cube{
@@ -84,10 +85,10 @@ p{
     float: right;
     padding-left: 3px;
 }
-.top-lime-green{
+.top-grey{
   width:100%;
   height: 600px;
-  background-color: #Ccdfcb ;
+  background-color:#f7fbfc ;
   float: right;
 }
 .navigation{
@@ -97,10 +98,10 @@ p{
   float: right;
 }
 
-.green-divider{
+.divider{
   width:100%;
   height: 200px;
-  background-color: #ccdfcb;
+  background-color:#f7fbfc;
   float:left;
 }
 .white-between-greens{
@@ -108,8 +109,8 @@ p{
   height:80px;
   background: repeating-linear-gradient(
   -45deg,
-  #ccdfcb,
-  #ccdfcb 10px,
+ #f7fbfc,
+ #f7fbfc 10px,
   white 10px,
   white 20px
 );
@@ -118,7 +119,7 @@ p{
 }
 .skills{
   width:100%;
-  background-color: #ccdfcb;
+  background-color:#f7fbfc;
   padding-top: 40px;
   float:left;
 }
@@ -145,13 +146,13 @@ p{
   padding-top:20px;
   padding-bottom:20px;
   float:right;
-  background-color: #414141;
+  background-color: #769fcd;
 }
 .proficiency-bar-black{
   height:10px;
   margin-left: -5px;
   border-radius: 10px;
-  background-color:#414141;
+  background-color:#769fcd;
   overflow: hidden;
 }
 .skill-proficiency-navy{
@@ -160,13 +161,13 @@ p{
   padding-top:20px;
   padding-bottom:20px;
   float:right;
-  background-color: #056571;
+  background-color: #b9d7ea;
 }
 .proficiency-bar-navy{
   height:10px;
   margin-left: -5px;
   border-radius: 10px;
-  background-color:#056571;
+  background-color:#b9d7ea;
   overflow: hidden;
 }
 
@@ -182,7 +183,7 @@ p{
 .footer{
   width:100%;
   height:550px;
-  background-color: #056571;
+  background-color: #b9d7ea;
   float:left;
 }
 .contact-form-head{
@@ -197,7 +198,7 @@ p{
   height:350px;
   margin-top: 10px;
   margin-left:50%;
-  background-color: #Ff6a5c;
+  background-color: #d6e6f2;
   border-radius: 20px;
   text-align: center;
   float:left;

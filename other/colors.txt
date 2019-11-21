@@ -2,3 +2,9 @@
 Ccdfcb --lime green
 Ff6a5c --pink
 056571 --navy blue
+
+NEW COLORS:
+#f7fbfc --grey white
+#d6e6f2 --light blue
+#b9d7ea --A little darker light blue
+#769fcd --Dark blue
