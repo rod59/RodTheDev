@@ -4,16 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="js/script.js"></script>
-
   <!--Montserrat and Lora Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
-  <!--Jquery -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -195,7 +187,7 @@
                   </div>
                   <div class="skill-proficiency-navy">
                     <div class="white-oval">
-                      <div class="proficiency-bar-navy" style="width:80%;">
+                      <div class="proficiency-bar-navy" style="width:60%;">
                       </div>
                     </div>
                   </div>
@@ -246,22 +238,14 @@
 
       </div>
     </div>
-    <script>
-    $(".proficiency-bar-navy").animate({width: "toggle"}, 0);
-    $(".proficiency-bar-black").animate({width: "toggle"}, 0);
 
-    $(document).ready(function() {
-      $(document).on('scroll', function(){
-        if($(document).scrollTop()>$('div.skills').offset().top-400){
-          $(".proficiency-bar-navy").animate({width: "show"}, 800);
-          $(".proficiency-bar-black").animate({width: "show"}, 800);
-        }
-        else{
-          $(".proficiency-bar-navy").animate({width: "hide"}, 800);
-          $(".proficiency-bar-black").animate({width: "hide"}, 800);
-        }
-      });
-      });
+
+    <link rel="stylesheet" type="text/css" href="style/style.min.css">
+    <script type="text/javascript" src="js/script.js">
+    </script>
+    <script>
+
+
     </script>
 </body>
 </html>
