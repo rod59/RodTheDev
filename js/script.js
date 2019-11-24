@@ -1,15 +1,21 @@
 /*BARS SLIDING IN OUT FUNCTIONALITY*/
+var bar = document.getElementsByClassName('proficiency-bar');
+var changeFactor = 1000;
+
+window.onload = function () {
+	for(var i = 0; i<bar.length; i++){
+		bar[i].style.transitionDuration = '0s';
+		var originalWidth	= bar[i].style.width.slice(0, -1);
+		bar[i].style.width	= originalWidth/changeFactor + "%";
+	}
+}
 window.onscroll = function (e) {
-	var bar = document.getElementsByClassName('proficiency-bar');
 	var elemTop = document.getElementsByClassName('skills');
-	var changeFactor = 1000;
 	if(window.scrollY > elemTop[0].offsetTop/1.5){
 		if(bar[0].style.width.slice(0, -1)<1){
 				for(var i = 0; i<bar.length; i++){
+					bar[i].style.transitionDuration = '1s';
 					var originalWidth = bar[i].style.width.slice(0, -1) * changeFactor;
-					for(var j = 0; j < originalWidth; j++ ){
-						bar[i].style.width = j + "%";
-				}
 				bar[i].style.width = originalWidth + "%";
 			}
 		}
@@ -17,10 +23,8 @@ window.onscroll = function (e) {
 	else{
 		if(bar[0].style.width.slice(0, -1)>1){
 			for(var i = 0; i<bar.length; i++){
+				bar[i].style.transitionDuration = '1s';
 				var originalWidth	= bar[i].style.width.slice(0, -1);
-				for(var j = originalWidth; j > 0; j-- ){
-					bar[i].style.width = j + "%";
-				}
 				bar[i].style.width	= originalWidth/changeFactor + "%";
 			}
 		}
