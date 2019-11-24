@@ -190,6 +190,58 @@ p{
   height:500px;
   background-color: $midBlue;
   float:left;
+
+  .the-greying{
+    width:100%;
+    height: 300px;
+    position: absolute;
+    z-index: 0;
+    opacity: 50%;
+    background-image: linear-gradient($midBlue, rgb(217, 226, 233), $midBlue);
+
+  }
+
+  .cloud{
+    margin-top: 50px;
+    height:auto;
+    width:auto;
+    position: inherit;
+    z-index: 1;
+    float:left;
+    transform: rotateZ(180deg);
+
+    .leftcloud{
+      display: inline-block;
+      height:60%;
+      width: 20%;
+      margin-left: -2%;
+      background-color: $grey;
+      border-radius: 22% 51% 100% 0% / 0% 33% 67% 34%;
+      float: left;
+
+    }
+
+    .midcloud{
+      display: inline-block;
+      height:100%;
+      width: 55%;
+      background-color: $grey;
+      position:relative;
+      z-index: 2;
+      border-radius: 0% 0% 100% 100% / 0% 0% 100% 90%;
+      float: left;
+    }
+    .rightcloud{
+      display: inline-block;
+      height:65%;
+      width:25%;
+      margin-right: -2%;
+      float: left;
+      background-color: $grey;
+      border-radius: 73% 0% 0% 100% / 57% 31% 56% 84%;
+      float: left;
+    }
+  }
 }
 
 
