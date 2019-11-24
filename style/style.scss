@@ -6,6 +6,7 @@ $darkBlue : #769fcd;
 
 body{
   width:100%;
+  background-color: white;
   margin: 20;
   padding: 0
 }
@@ -256,10 +257,8 @@ nav {
   font-weight: 500;
 	position: relative;
 	white-space: nowrap;
-	background: white;
 	padding: var(--underline-height) 0;
 	margin: 2em 0;
-	box-shadow: 0 1em 2em rgba(black, .05);
 }
 .underline {
 	display: block;
@@ -274,11 +273,9 @@ nav {
 	mix-blend-mode: multiply;
 	transition: transform var(--transition-duration) ease-in-out;
 	&:nth-child(1) {
-		background: yellow;
 		transition: calc(var(--transition-duration) * .8);
 	}
 	&:nth-child(2) {
-		background: cyan;
 		transition: calc(var(--transition-duration) * 1.2);
 	}
 	&:nth-child(3) {
