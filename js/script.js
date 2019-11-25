@@ -31,6 +31,30 @@ window.onscroll = function (e) {
 	}
 }
 
+/*CLOUDS MOVEMENT*/
+	var currentCloudMargin = 0;
+	var currentCloud = document.getElementsByClassName('biggest-cloud')[0];
+
+	var biggestMoveLeft = (function(){
+		var leftMovementInterval = setInterval(function(){
+		var screenWidth = parseInt(window.innerWidth);
+		currentCloudMargin = currentCloudMargin + .2;
+		if(currentCloud.style.marginLeft.slice(0,-2) > parseInt(currentCloud.style.width.slice(0, -2)) + screenWidth){
+			resetCloud();
+			clearInterval(leftMovementInterval);
+		}
+		else{
+		currentCloud.style.marginLeft = currentCloudMargin + 'px';
+		}
+		}, 1);
+	});
+
+	var resetCloud = (function(){
+		currentCloudMargin = -500;
+		currentCloud.style.marginLeft = currentCloudMargin + 'px';
+		biggestMoveLeft();
+	});
+biggestMoveLeft();
 /*NAV FUNCTIONALITY*/
 function ul(index) {
 	console.log('click!' + index)
