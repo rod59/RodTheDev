@@ -35,7 +35,7 @@ p{
 }
 /*begining of cube*/
 .cube{
-  width:55%;
+  width:55vw;
   height:600px;
   background-color: $lightBlue;
 
@@ -188,19 +188,18 @@ p{
 
 .cloud-class{
   width:100%;
-  height:500px;
+  height:700px;
   background-color: $midBlue;
   float:left;
-  overflow: hidden;
+  background-image: linear-gradient($midBlue, $midBlue, $darkBlue);
 
   .the-greying{
     width:100%;
     height: 200px;
     position: absolute;
     z-index: 0;
-    opacity: 30%;
+    opacity: .4;
     background-image: linear-gradient($midBlue, white, $midBlue);
-
   }
 
   .cloud{
@@ -216,9 +215,7 @@ p{
       border-radius: 22% 51% 100% 0% / 0% 33% 67% 34%;
       float: left;
       box-shadow: -6px 6px rgb(217, 226, 233);
-
     }
-
     .midcloud{
       display: inline-block;
       height:100%;
@@ -242,20 +239,24 @@ p{
     }
   }
   $cloudPos : absolute;
+  $moveCloudsdown: 0px;
   .biggest-cloud{
     height:100px;
+    margin-top: $moveCloudsdown + 150px;
     position: $cloudPos;
     z-index: 4;
   }
   .big-cloud{
     height:80px;
     width:250px;
+    margin-top: $moveCloudsdown + 70px;
     position: $cloudPos;
     z-index: 3;
   }
   .mid-cloud{
     height:50px;
     width:150px;
+    margin-top: $moveCloudsdown + 130px;
     position: $cloudPos;
     z-index: 2;
   }
@@ -263,7 +264,75 @@ p{
     height:20px;
     width:70px;
     position: $cloudPos;
+    margin-top: $moveCloudsdown + 130px;
     z-index: 1;
+  }
+
+  .mountain{
+    width:100%;
+    height: 100%;
+    position: relative;
+    overflow:hidden;
+
+    @mixin snow(){
+      float:right;
+      background-color: white;
+    }
+
+    .right-mountain{
+      position: absolute;
+      z-index: 3;
+      background-image: linear-gradient(white, $lightBlue,  $midBlue, $darkBlue);
+      margin-top:300px;
+      width:750px;
+      height:750px;
+      border-top-right-radius: 75px;
+      overflow-y:hidden;
+      transform: rotate(-50deg) skewX(-20deg);
+      border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+
+      .right-mountain-top{
+        width:30px;
+        height:140px;
+        @include snow();
+      }
+      .mid-mountain-top{
+        width:80px;
+        height:120px;
+        @include snow;
+      }
+      .left-mountain-top{
+        width:30px;
+        height:60px;
+        @include snow;
+      }
+    }
+    .left-mountain{
+      position: absolute;
+      background-image: linear-gradient(white, $lightBlue);
+      margin-top:400px;
+      margin-left: -350px;
+      width:700px;
+      height:150px;
+      border-top-right-radius: 75px;
+      overflow-y:hidden;
+      transform: rotate(-50deg)  skewX(-20deg);
+    }
+    .right-mountain-top{
+      width:20px;
+      height:100px;
+      @include snow();
+    }
+    .mid-mountain-top{
+      width:60px;
+      height:80px;
+      @include snow;
+    }
+    .left-mountain-top{
+      width:20px;
+      height:50px;
+      @include snow;
+    }
   }
 }
 
@@ -272,7 +341,7 @@ p{
 .footer{
   width:100%;
   height:550px;
-  background-color: $lightBlue;
+  background-color: $darkBlue;
   float:left;
 
   .contact-form-head{
