@@ -35,6 +35,7 @@ window.onscroll = function (e) {
 	var currentCloudMargin = 0;
 	var currentCloud = document.getElementsByClassName('biggest-cloud')[0];
 
+
 	var biggestMoveLeft = (function(){
 		var leftMovementInterval = setInterval(function(){
 		var screenWidth = parseInt(window.innerWidth);
@@ -50,7 +51,7 @@ window.onscroll = function (e) {
 	});
 
 	var resetCloud = (function(){
-		currentCloudMargin = -500;
+		currentCloudMargin = -10;
 		currentCloud.style.marginLeft = currentCloudMargin + 'px';
 		biggestMoveLeft();
 	});
