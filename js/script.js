@@ -31,12 +31,19 @@ window.onscroll = function (e) {
 	}
 }
 
-/*BIGGEST CLOUDS MOVEMENT*/
-	var currentCloudMargin = [0,0,0,0];
-	var currentCloud = [document.getElementsByClassName('biggest-cloud')[0],
-											document.getElementsByClassName('big-cloud')[0],
+/*CLOUDS MOVEMENT*/
+//THE ORDER OF THESE ARRAYS MATTERS!!!
+//EACH POSITION IS LINKED (ex: currentCloudMargin[0] associated with currentCloud[0])
+//SPEED OF MOVEMENT IS LINKED TO POSITIONING IN ARRAY AS WELL
+	var currentCloudMargin = [400,800,100,600,200,1000,300,1200];
+	var currentCloud = [document.getElementsByClassName('small-cloud')[0],
+											document.getElementsByClassName('small-cloud')[1],
 											document.getElementsByClassName('mid-cloud')[0],
-											document.getElementsByClassName('small-cloud')[0]];
+											document.getElementsByClassName('mid-cloud')[1],
+											document.getElementsByClassName('big-cloud')[0],
+											document.getElementsByClassName('big-cloud')[1],
+											document.getElementsByClassName('biggest-cloud')[0],
+											document.getElementsByClassName('biggest-cloud')[1]];
 
 	var biggestMoveLeft = (function(){
 		for(var i = 0; i < currentCloud.length; i++){
@@ -45,7 +52,7 @@ window.onscroll = function (e) {
 	});
 
 	function resetCloud(input){
-		currentCloudMargin[input] = -500;
+		currentCloudMargin[input] = -300;
 		currentCloud[input].style.marginLeft = currentCloudMargin[input] + 'px';
 		continueCloud(input);
 	}
@@ -53,9 +60,9 @@ window.onscroll = function (e) {
 	function continueCloud(iValue){
 		var leftMovementInterval = setInterval(function(){
 		var screenWidth = parseInt(window.innerWidth);
-		currentCloudMargin[iValue] = currentCloudMargin[iValue] + .4;
+		currentCloudMargin[iValue] = currentCloudMargin[iValue] + (iValue+1)/26;
 
-		if(currentCloud[iValue].style.marginLeft.slice(0,-2) >2000 + screenWidth){
+		if(currentCloud[iValue].style.marginLeft.slice(0,-2) >screenWidth){
 			resetCloud(iValue);
 			clearInterval(leftMovementInterval);
 		}
