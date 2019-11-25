@@ -31,30 +31,41 @@ window.onscroll = function (e) {
 	}
 }
 
-/*CLOUDS MOVEMENT*/
-	var currentCloudMargin = 0;
-	var currentCloud = document.getElementsByClassName('biggest-cloud')[0];
+/*BIGGEST CLOUDS MOVEMENT*/
+	var currentCloudMargin = [0,0,0,0];
+	var currentCloud = [document.getElementsByClassName('biggest-cloud')[0],
+											document.getElementsByClassName('big-cloud')[0],
+											document.getElementsByClassName('mid-cloud')[0],
+											document.getElementsByClassName('small-cloud')[0]];
 
 	var biggestMoveLeft = (function(){
+		for(var i = 0; i < currentCloud.length; i++){
+			continueCloud(i);
+		}
+	});
+
+	function resetCloud(input){
+		currentCloudMargin[input] = -500;
+		currentCloud[input].style.marginLeft = currentCloudMargin[input] + 'px';
+		continueCloud(input);
+	}
+
+	function continueCloud(iValue){
 		var leftMovementInterval = setInterval(function(){
 		var screenWidth = parseInt(window.innerWidth);
-		currentCloudMargin = currentCloudMargin + .2;
-		if(currentCloud.style.marginLeft.slice(0,-2) > parseInt(currentCloud.style.width.slice(0, -2)) + screenWidth){
-			resetCloud();
+		currentCloudMargin[iValue] = currentCloudMargin[iValue] + .4;
+
+		if(currentCloud[iValue].style.marginLeft.slice(0,-2) >2000 + screenWidth){
+			resetCloud(iValue);
 			clearInterval(leftMovementInterval);
 		}
 		else{
-		currentCloud.style.marginLeft = currentCloudMargin + 'px';
+		currentCloud[iValue].style.marginLeft = currentCloudMargin[iValue] + 'px';
 		}
-		}, 1);
-	});
-
-	var resetCloud = (function(){
-		currentCloudMargin = -500;
-		currentCloud.style.marginLeft = currentCloudMargin + 'px';
-		biggestMoveLeft();
-	});
+	}, 1);
+	}
 biggestMoveLeft();
+
 /*NAV FUNCTIONALITY*/
 function ul(index) {
 	console.log('click!' + index)
