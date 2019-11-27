@@ -60,7 +60,7 @@ window.onscroll = function (e) {
 	function continueCloud(iValue){
 		var leftMovementInterval = setInterval(function(){
 		var screenWidth = parseInt(window.innerWidth);
-		currentCloudMargin[iValue] = currentCloudMargin[iValue] + (iValue+1)/4;
+		currentCloudMargin[iValue] = currentCloudMargin[iValue] + (iValue+1)/26;
 
 		if(currentCloud[iValue].style.marginLeft.slice(0,-2) >screenWidth){
 			resetCloud(iValue);
@@ -69,7 +69,7 @@ window.onscroll = function (e) {
 		else{
 		currentCloud[iValue].style.marginLeft = currentCloudMargin[iValue] + 'px';
 		}
-	}, 25);
+	}, 1);
 	}
 biggestMoveLeft();
 
