@@ -25,15 +25,15 @@ h1{
   font-weight:bolder;
 }
 h2{
-  font-size: 40px;
-  font-weight: 750;
-}
-h3{
   font-size: 25px;
   font-weight: 750;
 }
-p{
+h3{
   font-size: 20px;
+  font-weight: 750;
+}
+p{
+  font-size: 18px;
   font-family: Lato;
 }
 /*begining of cube*/
@@ -113,7 +113,7 @@ p{
 .top-grey{
   width:100%;
   height:$cubeHeight;
-  background-color:black ;
+  background-color:$grey;
   float: right;
 }
 
@@ -126,7 +126,7 @@ p{
 }
 .white-between{
   width: 100%;
-  height:100px;
+  height:70px;
   background: repeating-linear-gradient(
   -45deg,
  $grey,
@@ -265,35 +265,43 @@ p{
     }
   }
   $cloudPos : absolute;
-  $moveCloudsdown: 0px;
+  $moveCloudsdown : 10px;
+  $allCloudSize : 10vw;
+  $maxCloudSize : 100px;
+  @mixin size($size){
+    height:$allCloudSize*$size/5;
+    width:$allCloudSize*3*$size/5;
+    max-height:$maxCloudSize*$size/5;
+    max-width:$maxCloudSize*3*$size/5;
+    min-height:$maxCloudSize*$size/5/1.5;
+    min-width:$maxCloudSize*3*$size/5/1.5;
+  }
   .biggest-cloud{
-    height:100px;
+    @include size(5);
     margin-top: $moveCloudsdown + 150px;
     position: $cloudPos;
-    z-index: 4;
+    z-index: 5;
   }
   .big-cloud{
-    height:80px;
-    width:250px;
+    @include size(4);
     margin-top: $moveCloudsdown + 70px;
     position: $cloudPos;
     z-index: 3;
   }
   .mid-cloud{
-    height:50px;
-    width:150px;
+    @include size(3);
     margin-top: $moveCloudsdown + 130px;
     position: $cloudPos;
     z-index: 2;
   }
   .small-cloud{
-    height:20px;
-    width:70px;
+    @include size(2);
     position: $cloudPos;
     margin-top: $moveCloudsdown + 130px;
     z-index: 1;
   }
 
+  $sun : #ffea00;
   .mountain{
     width:100%;
     height: 100%;
@@ -309,21 +317,32 @@ p{
       float:right;
       width:100%;
       height:100%;
-      opacity: .13;
-      background-image: linear-gradient(to right,$grey 0%, $grey 80%, grey 95%, black 100%);
+      opacity: .16;
+      background-image: linear-gradient(to top,$grey 0%, $grey 80%, grey 95%, black 100%);
+    }
+    .mountain-sun{
+      position: absolute;
+      float:right;
+      width:100%;
+      height:100%;
+      opacity: .08;
+      background-image: linear-gradient(to right, transparent 85%, $sun 100%);
     }
 
     .right-mountain{
       position: absolute;
       z-index: 3;
-      background-image: linear-gradient(white, $lightBlue,  $midBlue, $darkBlue);
-      margin-top:300px;
-      width:750px;
-      height:750px;
+      background-image: linear-gradient(.75turn,$grey, $lightBlue,  $midBlue, $darkBlue);
+      margin-top:400px;
+      margin-left:-10px;
+      width:70%;
+      height:110%;
+      min-width:500px;
+      max-width:950px;
       border-top-right-radius: 75px;
       overflow-y:hidden;
+    //  opacity:0;
       transform: rotate(-50deg) skewX(-20deg);
-      border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
 
       .right-mountain-top{
         width:30px;
@@ -333,21 +352,25 @@ p{
       .mid-mountain-top{
         width:80px;
         height:120px;
+        margin-right:-1%;
         @include snow;
       }
       .left-mountain-top{
         width:30px;
         height:60px;
+        margin-right:-1%;
         @include snow;
       }
     }
     .left-mountain{
       position: absolute;
-      background-image: linear-gradient(white, $lightBlue);
-      margin-top:400px;
-      margin-left: -350px;
-      width:700px;
-      height:150px;
+      background-image: linear-gradient(.75turn,$grey 0%, $lightBlue 10%,  $midBlue 30%, $darkBlue);
+      margin-top:500px;
+      margin-left: -250px;
+      width:70%;
+      height:95%;
+      min-width:600px;
+      max-width:850px;
       border-top-right-radius: 75px;
       overflow-y:hidden;
       transform: rotate(-50deg)  skewX(-20deg);
@@ -360,11 +383,13 @@ p{
     .mid-mountain-top{
       width:60px;
       height:80px;
+      margin-right:-1%;
       @include snow;
     }
     .left-mountain-top{
       width:20px;
       height:50px;
+      margin-right:-1%;
       @include snow;
     }
   }
@@ -384,12 +409,12 @@ p{
 
   .contact-form-head{
     width:50%;
-    margin-left:6em;
+    margin-left:20%;
     padding-top:50px;
     float:left;
   }
   .contact-form{
-    width:70%;
+    width:100%;
     height:350px;
     margin-top: 10px;
     margin-left:50%;
@@ -429,6 +454,10 @@ p{
       border:0px;
         }
   }
+  #contact-line2{
+    margin-left:100px;
+  }
+
 }
 
 @media (max-width:800px){
@@ -449,15 +478,33 @@ p{
       margin-top:40px;
     }
   }
+  .footer{
+    .contact-form{
+      width:100%;
+    }
+  }
+}
+
+@media (max-width:600px){
+  h1{
+    font-size:35px;
+  }
 }
 
 @media (max-width:400px){
   h1{
-    font-size:35px;
+    font-size:25px;
   }
-  .cube{
-    .cube-content{
-      margin-top:-$cubeHeight/1.1;
+  h2{
+    font-size: 23px;
+  }
+  .footer{
+    .contact-form{
+      margin-left:-40%;
+      width:200%;
+    }
+    #contact-line2{
+      margin-left:80px;
     }
   }
 }
