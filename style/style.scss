@@ -80,6 +80,7 @@ p{
     width: $cubeWidth + $cubeShadowHeight;
     height:$cubeShadowHeight + 0%;
     float:left;
+    background-color: $darkBlue;
     margin-top:-$cubeShadowHeight + 0vw;
 
   .bottom-left-corner{
@@ -88,13 +89,7 @@ p{
     border-bottom: $darkBlue;
     border-right: $darkBlue;
     @include corner(left);
-    margin-left:-.25%;
-  }
-  .bottom-bar{
-    width:100%;
-    height:$cubeShadowHeight + 0vw;
-    background-color: $darkBlue;
-  }
+    }
   .bottom-right-corner{
     border-left:$darkBlue;
     border-top: $darkBlue;
