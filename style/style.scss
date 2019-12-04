@@ -3,7 +3,6 @@ $lightBlue : #d6e6f2;
 $midBlue : #b9d7ea;
 $darkBlue : #769fcd;
 $cubeWidth : 50%;
-$allDivHeights: 600px;
 $cubeHeight:40vw;
 $cubeShadowHeight:5.5;
 
@@ -13,13 +12,12 @@ body{
 }
 h1, h2, h3{
   text-align: center;
-  font-family: Montserrat;
+  font-family:Tahoma;
   margin:0;
   padding:0;
 }
 h1{
   font-size: 50px;
-  font-weight:bolder;
 }
 h2{
   font-size: 25px;
@@ -31,7 +29,7 @@ h3{
 }
 p{
   font-size: 18px;
-  font-family: Lato;
+  font-family: Verdana;
 }
 /*begining of cube*/
 @mixin corner($floatVar){
@@ -90,6 +88,7 @@ p{
     border-bottom: $darkBlue;
     border-right: $darkBlue;
     @include corner(left);
+    margin-left:-.25%;
   }
   .bottom-bar{
     width:100%;
@@ -179,6 +178,9 @@ p{
       width:50%;
       float:left;
       text-align: center;
+      p{
+        margin-top:25px;
+      }
     }
     .white-oval{
       width:90%;
@@ -430,7 +432,7 @@ $sun : #ffea00;
       text-align: left;
     }
     p{
-      margin-top:0px;
+      margin-top:10px;
     }
     }
 
@@ -519,17 +521,17 @@ $sun : #ffea00;
     }
   }
   .footer{
-    height:700px;
+    height:720px;
     .right-contact{
       width:100%;
-      float:left;
       h2{
         text-align: left;
         margin-left:20px;
         margin-bottom:40px;
       }
       .contact-form{
-        width:100%;
+        width:90%;
+        margin-left:5%;
       }
     }
     .left-contact{
