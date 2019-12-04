@@ -60,7 +60,7 @@ window.onscroll = function (e) {
 	function continueCloud(iValue){
 		var leftMovementInterval = setInterval(function(){
 		var screenWidth = parseInt(window.innerWidth);
-		currentCloudMargin[iValue] = currentCloudMargin[iValue] + (iValue+1)/5;
+		currentCloudMargin[iValue] = currentCloudMargin[iValue] + (iValue+1)/10;
 
 		if(currentCloud[iValue].style.marginLeft.slice(0,-2) >screenWidth){
 			resetCloud(iValue);
