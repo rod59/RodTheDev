@@ -116,11 +116,12 @@ p{
 
 
   .nav-item{
-    width:48%;
-    height:48%;
-    background-color: black;
+    width:45%;
+    height:45%;
+    background-color: $midBlue;
+    border:.4vw solid $darkBlue;
     float:left;
-    margin:.5%;
+    margin:1%;
     border-radius: 10%;
 
     a{
@@ -129,23 +130,31 @@ p{
     }
 
     .nav-contents{
-      width:80%;
-      height:80%;
-      background-color: $lightBlue;
-      margin:10%;
-      text-align: center;
+      width:92%;
+      height:92%;
+      margin-left:11%;
+      margin-top:4%;
+      margin-bottom:4%;
       transition:.5s;
       border-radius: 10%;
+      background-color: $lightBlue;
+      display:grid;
+      place-items:center;
+      //idk why atom doesnt see place-items as code; it works on chrome
     }
     .nav-contents:hover{
-      width:85%;
-      height:85%;
-      margin:7.5%;
+      width:94%;
+      height:94%;
+      margin-left:7%;
+      margin-top:3%;
+      margin-bottom:3%;
     }
     .nav-contents:active{
-      width:90%;
-      height:90%;
-      margin:5%;
+      width:98%;
+      height:98%;
+      margin-left:2%;
+      margin-top:1%;
+      margin-bottom:1%;
     }
   }
 }
@@ -322,8 +331,8 @@ $sun : #ffea00;
     width:$allCloudSize*3*$size/5;
     max-height:$maxCloudSize*$size/5;
     max-width:$maxCloudSize*3*$size/5;
-    min-height:$maxCloudSize*$size/5/1.5;
-    min-width:$maxCloudSize*3*$size/5/1.5;
+    min-height:$maxCloudSize*$size/7/1.5;
+    min-width:$maxCloudSize*3*$size/7/1.5;
   }
   .biggest-cloud{
     @include size(5);
@@ -546,6 +555,12 @@ $sun : #ffea00;
 @media (max-width:600px){
   h1{
     font-size:35px;
+  }
+  h3{
+    font-size: 15px;
+  }
+  p{
+    font-size: 12px;
   }
   .cloud-class{
     .sun{
