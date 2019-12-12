@@ -71,3 +71,56 @@ function continueCloud(iValue) {
   }, 25);
 }
 biggestMoveLeft();
+//fish movement
+var currentFishMargin = [400, 800, 100, 600, 200, 1000, 300, 1200];
+var currentFish = [document.getElementsByClassName('small-fish')[0],
+  document.getElementsByClassName('small-fish')[1],
+  document.getElementsByClassName('mid-fish')[0],
+  document.getElementsByClassName('mid-fish')[1],
+  document.getElementsByClassName('big-fish')[0],
+  document.getElementsByClassName('big-fish')[1]
+];
+
+var fishMovement = (function() {
+  for (var i = 0; i < currentFish.length; i++) {
+    if(i%2 === 0){
+      continueFishRight(i);
+    }
+    else{
+      continueFishLeft(i);
+    }
+  }
+});
+
+function continueFishLeft(i) {
+  var leftMovementInterval = setInterval(function() {
+    var screenWidth = parseInt(window.innerWidth);
+    currentFishMargin[i] = currentFishMargin[i] - (i + 1)/4;
+
+    if (currentFish[i].style.marginLeft.slice(0, -2) < -200) {
+      currentFish[i].style.transform = 'scalex(1)';
+      continueFishRight(i);
+      clearInterval(leftMovementInterval);
+
+    } else {
+      currentFish[i].style.marginLeft = currentFishMargin[i] + 'px';
+    }
+  }, 20);
+}
+
+function continueFishRight(i) {
+  var rightMovementInterval = setInterval(function() {
+    var screenWidth = parseInt(window.innerWidth);
+    currentFishMargin[i] = currentFishMargin[i] + (i + 1)/4;
+
+    if (currentFish[i].style.marginLeft.slice(0, -2) > screenWidth+200) {
+      //flip fish and continue left
+      currentFish[i].style.transform = 'scalex(-1)';
+      continueFishLeft(i);
+      clearInterval(rightMovementInterval);
+    } else {
+      currentFish[i].style.marginLeft = currentFishMargin[i] + 'px';
+    }
+  }, 20);
+}
+fishMovement();
