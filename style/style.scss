@@ -584,12 +584,13 @@ $sun: #ffea00;
       margin-left: -50px;
     }
   }
-
   .contact-form {
     width: 95%;
     height: 350px;
     margin-top: 10px;
-    background-color: $midBlue;
+    //$midblue but transparent
+    background-color:rgba($midBlue, .9);
+    border: 4px solid white;
     border-radius: 20px;
     text-align: center;
     padding-bottom: 20px;
@@ -611,6 +612,7 @@ $sun: #ffea00;
     }
 
     .text-box {
+      opacity: 1;
       height: 100px;
       @include contactFeilds();
     }
