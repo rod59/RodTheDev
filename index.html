@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="robots" content="noindex">
@@ -8,6 +8,16 @@
   <meta name="description" content="A stunning veiw of what is possible with pure HTML, CSS, and JavaScript. A good looking website WITH good page speeds with the help of a little code.">
   <meta name="author" content="Rod Rahmjoo">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- icon in the highest resolution we need it for -->
+  <link rel="icon" sizes="192x192" href="apple-icon.png">
+
+  <!-- reuse same icon for Safari -->
+  <link rel="apple-touch-icon" href="apple-icon.png">
+
+  <!-- multiple icons for IE -->
+  <meta name="msapplication-square192x192logo" content="apple-icon.png">
+  <meta name="theme-color" content="#d6e6f2">
 </head>
 
 <body>
@@ -369,11 +379,20 @@
         </h2>
 
         <form class="contact-form" action="contactform.php" method="post">
-          <input class="input" type="text" name="name" placeholder=" Name">
-          <input class="input" type="text" name="mail" placeholder=" Email Adress">
-          <input class="input" type="text" name="subject" placeholder=" Subject">
-          <textarea class="text-box" name="message" placeholder=" Message"></textarea>
-          <button class="my-button" type="submit" name="Submit">Send Email</button>
+          <label>
+            <p>Name</p>
+            <input alt="Enter Your Name" class="input" type="text" name="name">
+          </label>
+          <label>
+            <p>E-mail</p>
+          <input alt="Enter Your E-mail Address" class="input" type="text" name="mail">
+          <label>
+            <p>Subject</p>
+          <input alt="Enter The Subject" class="input" type="text" name="subject">
+          <label>
+            <p>Message</p>
+          <textarea alt="Enter Your Message"class="text-box" name="message"></textarea>
+          <button alt="Submit Your E-mail"class="my-button" type="submit" name="Submit">Send Email</button>
         </form>
 
       </div>
