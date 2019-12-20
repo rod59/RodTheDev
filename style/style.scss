@@ -33,7 +33,7 @@ h3 {
 
 h1 {
   font-size: 50px;
-}
+  }
 
 h2 {
   font-size: 30px;
@@ -86,14 +86,14 @@ p {
   height: $cubeHeight;
   float: left;
   background-color: $darkBlue;
-  border-bottom: 2px solid black;
+  border-bottom:2px solid black;
 
   .cube-content {
     margin-left: -50%;
 
     h1 {
       line-height: $cubeHeight/3;
-      color: white;
+      color:white;
     }
   }
 }
@@ -101,7 +101,7 @@ p {
 .bottom {
   width: $cubeWidth -$cubeShadowHeight;
   float: left;
-  margin-left: -.25px;
+  margin-left:-.25px;
   background-color: $darkBlue;
 
   .bottom-left-corner {
@@ -112,7 +112,6 @@ p {
     @include corner(left);
     //the bottom bar is a little off without this
   }
-
   .far-right-corner {
     border-left: $midBlue;
     border-top: $midBlue;
@@ -121,7 +120,6 @@ p {
     @include corner(right);
   }
 }
-
 .bottom-right-corner {
   border-left: $darkBlue;
   border-top: $darkBlue;
@@ -129,82 +127,78 @@ p {
   border-right: $midBlue;
   @include corner(left);
 }
-/*end of cube*/
-$navSpeed: 0.5s;
 
+/*end of cube*/
+$navSpeed: .5s;
 .right-of-cube {
   width: $cubeWidth + $cubeShadowHeight;
   background-color: $darkBlue;
   height: $cubeHeight;
   float: left;
-  border-bottom: 2px solid black;
+  border-bottom:2px solid black;
 
-  a {
-    color: black;
+  a{
+    color:black;
     text-decoration: none;
-  }
+    }
 
-  .nav {
-    width: 99%;
-    height: 99.5%;
-    float: right;
-    position: relative;
-    margin-top: $cubeShadowHeight*2vw;
+  .nav{
+    width:99%;
+    height:99.5%;
+    float:right;
+    position:relative;
+    margin-top:$cubeShadowHeight*2vw;
 
-    .one-nav-block {
-      width: 50 +$cubeShadowHeight *2 + 0;
-      height: 50%;
-      float: right;
-      position: absolute;
+    .one-nav-block{
+      width:50 +$cubeShadowHeight *2 + 0%;
+      height:50%;
+      float:right;
+      position:absolute;
       z-index: 1;
-      overflow-y: hidden;
-      overflow-x: hidden;
+      overflow-y:hidden;
+      overflow-x:hidden;
       transition-duration: $navSpeed;
 
-      .nav-content {
-        width: 89%;
-        height: 85%;
+      .nav-content{
+        width:89%;
+        height:85%;
         position: absolute;
         display: grid;
-        place-items: center;
-        top: $cubeShadowHeight *2 + 0vw;
-        right: $cubeShadowHeight *2 + 0vw;
+        place-items:center;
+        top:$cubeShadowHeight *2 + 0vw;
+        right:$cubeShadowHeight *2 + 0vw;
         background-color: $grey;
         transition-duration: $navSpeed;
       }
     }
-
-    .one-nav-block:hover {
-      padding-bottom: -$cubeShadowHeight +0vw;
+    .one-nav-block:hover{
+      padding-bottom:-$cubeShadowHeight +0vw;
+    }
+    .one-nav-block:hover .right-bar{
+      width:$cubeShadowHeight +0vw;
+    }
+    .one-nav-block:hover .top-bar{
+      height:$cubeShadowHeight +0vw;
+    }
+    .one-nav-block:hover .nav-content{
+      top:$cubeShadowHeight + 0vw;
+      right:$cubeShadowHeight + 0vw;
     }
 
-    .one-nav-block:hover .right-bar {
-      width: $cubeShadowHeight +0vw;
-    }
-
-    .one-nav-block:hover .top-bar {
-      height: $cubeShadowHeight +0vw;
-    }
-
-    .one-nav-block:hover .nav-content {
-      top: $cubeShadowHeight + 0vw;
-      right: $cubeShadowHeight + 0vw;
-    }
-
-    .right-bar {
-      width: $cubeShadowHeight *2 + 0vw;
-      height: 100%;
-      margin-top: -$cubeShadowHeight *2 + 0;
-      position: relative;
+    .right-bar{
+      width:$cubeShadowHeight *2 + 0vw;
+      height:100%;
+      margin-top:-$cubeShadowHeight *2 + 0vw;
+      position:relative;
       z-index: -1;
       background: linear-gradient(-45deg, transparent $cubeShadowHeight + $cubeShadowHeight/3 + 0vw, $lightBlue $cubeShadowHeight + $cubeShadowHeight/3 +0vw);
-      float: right;
-      transition-duration: $navSpeed;
+      float:right;
+      transition-duration:$navSpeed;
 
-      &::before {
-        content: "";
+      &::before{
+        content:"";
         position: absolute;
-        top: 0;
+        top:0;
         border-left: $midBlue;
         border-top: $midBlue;
         border-bottom: $lightBlue;
@@ -212,8 +206,8 @@ $navSpeed: 0.5s;
         @include corner(left);
       }
 
-      &::after {
-        content: "";
+      &::after{
+        content:"";
         position: absolute;
         bottom: 0;
         border-left: $lightBlue;
@@ -223,37 +217,34 @@ $navSpeed: 0.5s;
         @include corner(left);
       }
     }
-
-    .top-bar {
-      width: 100%;
-      height: $cubeShadowHeight *2 + 0vw;
+    .top-bar{
+      width:100%;
+      height:$cubeShadowHeight *2 + 0vw;
       position: relative;
-      left: 0;
+      left:0;
       z-index: -1;
       background: linear-gradient(135deg, transparent $cubeShadowHeight + $cubeShadowHeight/3 + 0vw, $midBlue $cubeShadowHeight + $cubeShadowHeight/3 +0vw);
-      float: right;
+      float:right;
       transition-duration: $navSpeed;
     }
-
-    .left {
+    .left{
       z-index: 1;
-      margin-top: $cubeHeight /2;
-      left: -.5vw;
+      margin-top:$cubeHeight /2;
+      left:-.5vw;
     }
-
-    .right {
+    .right{
       z-index: 1;
-      margin-top: $cubeHeight /2;
-      right: 0;
-    }
-
-    .top {
+      margin-top:$cubeHeight /2;
+      right:0;
+      }
+    .top{
       margin-left: 22.5%;
-      margin-top: $cubeShadowHeight *1.8 + 0vw;
+      margin-top:$cubeShadowHeight *1.8 + 0vw;
       z-index: 2;
     }
   }
 }
+
 
 .divider {
   width: 100%;
@@ -261,84 +252,77 @@ $navSpeed: 0.5s;
   background-color: $grey;
   float: left;
 
-  .divider-section {
-    width: $cubeWidth -$cubeShadowHeight;
-    height: 100%;
+  .divider-section{
+    width:$cubeWidth -$cubeShadowHeight;
+    height:100%;
     display: grid;
     float: left;
     place-items: center;
 
-    P {
+    P{
       text-align: center;
       padding-left: 5%;
       padding-right: 5%;
     }
-
-    h2 {
-      color: white;
+    h2{
+      color:white;
       //text-decoration: line-through;
       position: relative;
-
-      &::before {
-        content: "";
-        width: 100%;
-        height: 35px;
-        margin-bottom: -50px;
+      &::before{
+        content:"";
+        width:100%;
+        height:35px;
+        margin-bottom:-50px;
         float: left;
         background-color: black;
-      }
 
-      &::after {
-        content: "";
-        width: 110%;
+      }
+      &::after{
+        content:"";
+        width:110%;
         margin-left: -5%;
-        height: 35px;
-        margin-top: -40px;
+        height:35px;
+        margin-top:-40px;
         float: left;
-        border-top: 3px solid black;
+        border-top:3px solid black;
         border-bottom: 3px solid black;
       }
     }
   }
-
-  .colored-divider {
+  .colored-divider{
     //box-sizing: border-box;
     //border-top: 2px solid black;
     background-color: $midBlue;
-  }
-
-  .light-content-shadow {
+    }
+    .light-content-shadow{
     width: $cubeShadowHeight*2 + 0%;
     height: $cubeHeight -$cubeShadowHeight*2;
     background-color: $lightBlue;
     float: left;
-
-    &::after {
-      content: "";
-      margin-top: $cubeHeight -$cubeShadowHeight*2;
+    &::after{
+      content:"";
+      margin-top:$cubeHeight -$cubeShadowHeight*2;
       border-left: $lightBlue;
       border-top: $lightBlue;
       border-bottom: $darkBlue;
       border-right: $darkBlue;
       @include corner(left);
-    }
+     }
   }
-
-  .dark-content-shadow {
+  .dark-content-shadow{
     width: $cubeShadowHeight*2 + 0%;
     height: $cubeHeight -$cubeShadowHeight*2;
     background-color: $darkBlue;
     float: left;
-
-    &::after {
-      content: "";
-      margin-top: $cubeHeight -$cubeShadowHeight*2;
+    &::after{
+      content:"";
+      margin-top:$cubeHeight -$cubeShadowHeight*2;
       border-left: $darkBlue;
       border-top: $darkBlue;
       border-bottom: white;
       border-right: white;
       @include corner(left);
-    }
+     }
   }
 }
 
@@ -736,23 +720,23 @@ $navSpeed: 0.5s;
       margin-left: -50px;
     }
   }
-
   .contact-form {
     width: 95%;
     height: 350px;
     margin-top: 10px;
     //$midblue but transparent
-    background-color: rgba($midBlue, .9);
+    background-color:rgba($midBlue, .9);
     border: 4px solid white;
     border-radius: 20px;
     text-align: center;
     padding-bottom: 20px;
-
-    label {
-      p {
+    label{
+      p{
         text-align: left;
         font-size: 15px;
-        margin: 6px 0 0 5%;
+        margin:0;
+        margin-top:6px;
+        margin-left: 5%;
       }
     }
     @mixin contactFeilds() {
@@ -795,6 +779,7 @@ $navSpeed: 0.5s;
   }
 
   .fish {
+
     &:nth-child(even) {
       transform: scaleX(-1);
     }
@@ -834,8 +819,8 @@ $navSpeed: 0.5s;
         overflow-y: hidden;
         animation: tail 4s infinite ease-in-out;
       }
-      @keyframes tail {
-        33% {}
+      @keyframes tail{
+        33%{}
       }
 
       .fish-fin {
@@ -873,11 +858,10 @@ $navSpeed: 0.5s;
           background-color: black;
           animation: breathing 4s infinite ease-in-out;
         }
-        @keyframes breathing {
-          50% {
-            width: 65%;
-          }
+        @keyframes breathing{
+          50%{width: 65%;}
         }
+
       }
 
       .fish-eye {
@@ -914,22 +898,14 @@ $navSpeed: 0.5s;
       }
     }
     @keyframes fishSwim {
-      25% {
-        transform: rotate(47.5deg);
-      }
-
-      50% {
-        transform: rotate(50deg);
-      }
-
-      75% {
-        transform: rotate(47.5deg);
-      }
+      25% {transform: rotate(47.5deg);}
+      50% {transform: rotate(50deg);}
+      75% {transform: rotate(47.5deg);}
     }
   }
 
   .big-fish {
-    position: absolute;
+    position:absolute;
     z-index: -1;
     width: 8vw;
     height: 8vw;
@@ -940,7 +916,7 @@ $navSpeed: 0.5s;
   }
 
   .mid-fish {
-    position: absolute;
+    position:absolute;
     z-index: -2;
     width: 5vw;
     height: 5vw;
@@ -951,7 +927,7 @@ $navSpeed: 0.5s;
   }
 
   .small-fish {
-    position: absolute;
+    position:absolute;
     z-index: -3;
     width: 3vw;
     height: 3vw;
