@@ -1,11 +1,6 @@
 # RodTheDev
-Projects:
-  Profesional Website:
-  
-  I worked with a team of engineers to create a dynamic website that can be found here:
-  https://direction.dev/rstarr/
-  
-  Personal Website:
+This is a fun little project I did in my free time to showcase the beauty that can be achived with pure html, css, and javascript. All of the art and animation is made by me. There are no images incorporated on the page; all of the art is code based.
 
-  I wanted to challenge myself to create a website purly from code. Even the images have been coded into the website that can be found here:
-  https://rod59.github.io/RodTheDev/
+Links are broken, content is currently just a placeholder, and contact me is not functional nor does it include any real credentials.
+
+I hope you enjoy :)
